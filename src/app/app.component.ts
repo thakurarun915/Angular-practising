@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UsersService } from './service/users.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,23 @@ import { Component } from '@angular/core';
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'project-name';
+  users: any[]=[];
+
+
+constructor(private userService:UsersService){
+
+}
+  ngOnInit(): void {
+  this.users = this.userService.getAllUsers();
+  }
+
+
+
+
+
+
+
+
 }
