@@ -1,4 +1,10 @@
-<h2>User List</h2>
+
+
+<!-- <h1 class="text-center">{{pageTitle}}</h1> -->
+
+<!-- h2>User List</h2> -->
+<div *ngIf="users.length>0; else nousers">
+
 <ul>
   <li *ngFor="let user of users">
     <strong>{{ user.name }}</strong> |
@@ -8,3 +14,7 @@
     {{ user.address.geo.lat }}, {{ user.address.geo.lng }}
   </li>
 </ul>
+</div>
+<ng-template #nousers>
+  <p class="alert alert-danger text-center"> {{errorMessage}}</p>
+</ng-template>

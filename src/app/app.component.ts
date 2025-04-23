@@ -10,7 +10,8 @@ import { UsersService } from './service/users.service';
 })
 export class AppComponent implements OnInit {
   title = 'project-name';
-  users: any;
+  users: any[] = [];
+  errorMessage:string='Loading...';
 
 
 constructor(private userService:UsersService){
@@ -21,10 +22,12 @@ constructor(private userService:UsersService){
 
   
     this.users =  data ;
-
+  } ,(err)=>{
+    this.errorMessage= "Some internal issue while making Api call";
+  
   });
-
   }
+  
 }
 
 
