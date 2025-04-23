@@ -10,21 +10,25 @@ import { UsersService } from './service/users.service';
 })
 export class AppComponent implements OnInit {
   title = 'project-name';
-  users: any[]=[];
+  users: any;
 
 
 constructor(private userService:UsersService){
 
 }
-  ngOnInit(): void {
-  this.users = this.userService.getAllUsers();
+  ngOnInit(){
+  this.userService.getAllUsers().subscribe((data)=>{
+
+  
+    this.users =  data ;
+
+  });
+
   }
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+

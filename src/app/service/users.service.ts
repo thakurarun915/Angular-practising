@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,16 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class UsersService {
 
-  constructor() { }
+  constructor(private http : HttpClient) { }
 getAllUsers(){
-  return [
-       {id:101,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1999")},
-       {id:102,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1999")},
-       {id:103,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1999")},
-       {id:104,name:'john',city:'Delhi',salary:2,dob:new Date("05/10/1999")},
-       
-
-  ];
+ return this.http.get("https://jsonplaceholder.typicode.com/users");
+ 
+ 
 }
 
 }
+
+
