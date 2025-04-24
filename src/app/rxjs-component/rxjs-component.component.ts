@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-rxjs-component',
@@ -25,6 +25,19 @@ export class RxjsComponentComponent implements OnInit {
 
     //subscribe 2
     observable.subscribe(d => console.log(d));
+
+    const subject = new Subject();
+
+
+    //subscriber 1
+    subject.subscribe(d => console.log(d));
+
+
+    //subscriber 2
+    subject.subscribe(d => console.log(d));
+
+    subject.next(Math.random());
+
   }
 
 }
