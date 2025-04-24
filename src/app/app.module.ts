@@ -4,12 +4,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BindingComponent } from './binding/binding.component';
 import { UsersService } from './service/users.service';
-import { HttpClientModule } from '@angular/common/http'; // ✅ Correct import
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component'; // ✅ Correct import
 
 @NgModule({
   declarations: [
     AppComponent,
-    BindingComponent
+    BindingComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
