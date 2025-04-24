@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { BindingComponent } from './binding/binding.component';
 import { UsersService } from './service/users.service';
 import { HttpClientModule } from '@angular/common/http';
-import { DashboardComponent } from './dashboard/dashboard.component'; // ✅ Correct import
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RxjsComponentComponent } from './rxjs-component/rxjs-component.component'; // ✅ Correct import
 
 @NgModule({
   declarations: [
     AppComponent,
     BindingComponent,
-    DashboardComponent
+    DashboardComponent,
+    RxjsComponentComponent
   ],
   imports: [
     BrowserModule,
