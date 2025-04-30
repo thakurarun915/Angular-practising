@@ -1,11 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hooks',
   standalone: false,
   templateUrl: './hooks.component.html',
-  styleUrl: './hooks.component.css'
+  styleUrls: ['./hooks.component.css'] 
 })
-export class HooksComponent {
+export class HooksComponent implements OnInit {
+ data!: string;
 
+
+
+ constructor(){
+
+ }
+ 
+ 
+  ngOnInit(): void {
+    
+  }
+ handleData(e: any){
+  this.data= e.target.value;
+ }
 }

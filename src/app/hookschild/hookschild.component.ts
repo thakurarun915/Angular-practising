@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-hookschild',
@@ -7,7 +7,8 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
   styleUrl: './hookschild.component.css'
 })
 export class HookschildComponent implements OnInit, OnChanges{
-
+  @Input()
+  parentData!: string;
   constructor(){
     console.log('Constructor called');
 
