@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, ReplaySubject, Subject } from 'rxjs';
 import{ajax} from 'rxjs/ajax';
 
 @Component({
@@ -65,3 +65,14 @@ export class RxjsComponentComponent implements OnInit {
 }
 
 //https://jsonplaceholder.typicode.com/users
+
+
+
+
+
+//ReplaySubject
+
+const $message = new ReplaySubject();
+$message.next('Hello....');
+$message.next('How are you ?');
+$message.subscribe(msg=> console.log(`User1: ${msg}`));

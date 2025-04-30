@@ -7,20 +7,31 @@ import { UsersService } from './service/users.service';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RxjsComponentComponent } from './rxjs-component/rxjs-component.component'; // ✅ Correct import
+import { NotificationServiceService } from './service/notification.service.service';
+import { ContactComponent } from './contact/contact.component';
+import { NotificationBoardComponent } from './notification-board/notification-board.component';
+import { HookschildComponent } from './hookschild/hookschild.component';
+import { HooksComponent } from './hooks/hooks.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     BindingComponent,
     DashboardComponent,
-    RxjsComponentComponent
+    RxjsComponentComponent,
+    ContactComponent,
+    NotificationBoardComponent,
+    HookschildComponent,
+    HooksComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule // ✅ Properly import here
   ],
-  providers: [UsersService],
+  providers: [UsersService, 
+    NotificationServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
